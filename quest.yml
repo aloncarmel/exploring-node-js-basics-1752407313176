@@ -1,0 +1,34 @@
+id: exploring_nodejs_basics
+title: Exploring Node.js Basics
+subtitle: Dive into Node.js and build server-side magic
+description: >-
+  Ready to unlock the server-side superpowers of Node.js? In this quest, we
+  journey through the foundational concepts of Node.js, an open-source,
+  cross-platform JavaScript runtime. Whether you're new to Node.js or looking to
+  ground your basic skills, this quest is your ticket to understanding how
+  Node.js revolutionizes server-side development. 
+
+
+  We'll start by examining the Node.js event loop, a crucial concept that powers its non-blocking I/O operations. Next, we'll explore modules and how to use them to manage dependencies effectively. No Node.js quest is complete without a look at the package manager, npm--your indispensable friend for managing libraries and updates.
+
+
+  By engaging with this quest, you'll also learn how to handle asynchronous programming, grasp the essentials of setting up a basic Node.js server, and deepen your understanding of event-driven programming. Get ready to harness Node.js, and by the end, be prepared to build efficient, scalable applications with confidence!
+level: beginner
+duration: 0.75
+skills:
+  - javascript
+  - node.js
+  - asynchronous programming
+  - server-side development
+steps:
+  - welcome_to_nodejs
+  - understanding_event_loop
+  - nodejs_modules
+  - npm_overview
+  - asynchronous_programming
+  - setting_up_nodejs_server
+  - event_driven_programming
+  - node_versus_browser_js
+  - final_reflection
+type: MODULE
+repository: null
