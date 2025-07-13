@@ -1,0 +1,31 @@
+id: understanding_event_loop
+learningObjectives:
+  - Understand the Node.js event loop and how it supports non-blocking I/O.
+hints:
+  - Reviewing the [Wikipedia page on Event-driven
+    programming](https://en.wikipedia.org/wiki/Event-driven_programming) might
+    be helpful.
+startFlow:
+  do:
+    - actionId: bot_message
+      params:
+        person: lucca
+        messages:
+          - text: Node.js uses an event-driven architecture built on the concept of the
+              event loop.
+          - text: The event loop allows Node.js to perform non-blocking I/O operations
+              despite being single-threaded.
+          - text: This means it can handle thousands of connections simultaneously without
+              slowing down.
+          - text: Check out this [MDN
+              page](https://developer.mozilla.org/en-US/docs/Web/JavaScript/EventLoop)
+              to deepen your understanding of the event loop.
+          - text: Ready to loop through this step? Click when you are.
+    - actionId: ready_message
+      params:
+        person: lucca
+trigger:
+  type: user_ready_response
+  flowNode:
+    do:
+      - actionId: finish_step
