@@ -1,0 +1,28 @@
+id: asynchronous_programming
+learningObjectives:
+  - Understand Node.js's approach to asynchronous programming.
+hints:
+  - Here's a mind-opening [article on JavaScript
+    Promises](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Using_promises).
+startFlow:
+  do:
+    - actionId: bot_message
+      params:
+        person: lucca
+        messages:
+          - text: Asynchronous programming is a cornerstone of Node.js and crucial for
+              non-blocking I/O.
+          - text: With async programming, you can perform long network requests or file
+              operations without halting the execution of other tasks.
+          - text: Familiar with callbacks, promises, and async/await? They're your tools
+              here.
+          - text: Let's promise to dig even deeper! Once ready, we proceed to our next
+              event.
+    - actionId: ready_message
+      params:
+        person: lucca
+trigger:
+  type: user_ready_response
+  flowNode:
+    do:
+      - actionId: finish_step
