@@ -1,0 +1,27 @@
+id: npm_overview
+learningObjectives:
+  - Discover Node Package Manager (npm) and how it is used.
+hints:
+  - Here's a great place to start your [npm
+    exploration](https://docs.npmjs.com/).
+startFlow:
+  do:
+    - actionId: bot_message
+      params:
+        person: lucca
+        messages:
+          - text: npm is Node.js's package manager, like an app store for code libraries.
+          - text: With npm, you can download and manage external modules efficiently.
+          - text: It's also used to manage dependencies in your Node applications.
+          - text: Explore how a humble JSON file, `package.json`, manages all these
+              dependencies effortlessly.
+          - text: Dig deeper into npm with this [npm
+              Documentation](https://docs.npmjs.com/).
+    - actionId: ready_message
+      params:
+        person: lucca
+trigger:
+  type: user_ready_response
+  flowNode:
+    do:
+      - actionId: finish_step
