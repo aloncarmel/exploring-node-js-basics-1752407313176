@@ -1,0 +1,97 @@
+id: node_versus_browser_js
+learningObjectives:
+  - Explain the differences between Node.js and browser-based JavaScript.
+hints:
+  - "Hint: Consider where each runs and their available features."
+startFlow:
+  do:
+    - actionId: bot_message
+      params:
+        person: lucca
+        messages:
+          - text: Both Node.js and browser-based JavaScript use the same language, so what
+              sets them apart?
+trigger:
+  type: user_message
+  params:
+    person: lucca
+  flowNode:
+    do:
+      - actionId: parse_user_response
+        name: user_answer
+        params:
+          prompt: "
+
+            \    Please evaluate the user's answer in relation to
+            the expected answer: Node.js runs JavaScript in servers and can
+            manage applications without a browser. It includes many
+            server-specific APIs like the file system, which are not available
+            in a typical web browser. Meanwhile, browser JavaScript focuses on
+            interacting with the user interface on a web page..
+
+            \    # Assessment Criteria
+
+            \    - Determine if the user's response demonstrates a
+            clear understanding of the key concepts and ideas presented in the
+            expected answer.
+
+            \    - Consider synonyms, paraphrasing, and different
+            phrasing that convey the same meaning.
+
+            \    - Be flexible and focus on the essence of the
+            answer rather than exact wording.
+
+            \ \ 
+
+            \    # Response Guidelines:
+
+            \    - If the user's answer is correct or shows
+            sufficient understanding, return 'correct: true'.
+
+            \      - Provide a positive and affirming message,
+            congratulating them and reinforcing their understanding.
+
+            \    - If the user's answer is incorrect or incomplete,
+            return 'correct: false'.
+
+            \      - Gently explain why the answer is not fully
+            correct or what may be missing.
+
+            \      - Encourage them to try again, being empathetic
+            and supportive.
+
+            \ \ 
+
+            \    # Tone and Style:
+
+            \    - Use friendly and encouraging language.
+
+            \    - Be empathetic to the user's learning process.
+
+            \    - Focus on helping the user learn and understand
+            the material.
+
+            \  "
+          schema:
+            correct: boolean
+            reply: string
+    if:
+      conditions:
+        - conditionId: is_truthy
+          params:
+            value: ${outputs.user_answer.value.correct}
+      then:
+        do:
+          - actionId: bot_message
+            params:
+              person: lucca
+              messages:
+                - text: ${outputs.user_answer.value.reply}
+          - actionId: finish_step
+      else:
+        do:
+          - actionId: bot_message
+            params:
+              person: lucca
+              messages:
+                - text: ${outputs.user_answer.value.reply}
