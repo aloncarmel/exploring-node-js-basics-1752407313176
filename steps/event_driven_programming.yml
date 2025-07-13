@@ -1,0 +1,58 @@
+id: event_driven_programming
+learningObjectives:
+  - Identify key features of event-driven programming in Node.js.
+hints:
+  - Node.js relies heavily on event-driven architecture as a way to process
+    asynchronous events.
+startFlow:
+  do:
+    - actionId: bot_message
+      params:
+        person: lucca
+        messages:
+          - text: What makes event-driven programming crucial in Node.js?
+    - actionId: quiz_message
+      name: quiz
+      params:
+        person: lucca
+        options:
+          - Event-loop makes it asynchronous.
+          - Handles streams of data continuously.
+          - Manages memory efficiently.
+trigger:
+  type: chat_form_submitted
+  flowNode:
+    switch:
+      key: ${formSubmission}
+      cases:
+        A:
+          do:
+            - actionId: bot_message
+              params:
+                person: lucca
+                messages:
+                  - text: Absolutely, the event-loop is central to Node.js's event-driven
+                      architecture!
+            - actionId: finish_step
+        B:
+          do:
+            - actionId: bot_message
+              params:
+                person: lucca
+                messages:
+                  - text: Close! This is part of it, but the event-loop truly defines the
+                      asynchronous nature.
+            - actionId: replay_action
+              params:
+                actionName: quiz
+        C:
+          do:
+            - actionId: bot_message
+              params:
+                person: lucca
+                messages:
+                  - text: That's not quite it. While efficient memory management is important, the
+                      event-loop focuses on handling asynchronous operations.
+            - actionId: replay_action
+              params:
+                actionName: quiz
