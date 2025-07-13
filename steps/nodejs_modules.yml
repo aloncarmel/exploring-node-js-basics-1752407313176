@@ -1,0 +1,28 @@
+id: nodejs_modules
+learningObjectives:
+  - Learn about Node.js modules and how they help organize code.
+hints:
+  - Take a peek at the [Node.js Modules
+    page](https://nodejs.org/docs/latest-v16.x/api/modules.html).
+startFlow:
+  do:
+    - actionId: bot_message
+      params:
+        person: lucca
+        messages:
+          - text: Modules are essential in Node.js--they allow you to break your code into
+              reusable chunks.
+          - text: You can think of a module as a file containing related code, which can be
+              exported and imported for use in other files.
+          - text: Node.js has a built-in module system inspired by CommonJS.
+          - text: Want to unleash the power of modules? Click ready when you're ready.
+          - text: Start exploring by visiting this [Node.js Modules
+              guide](https://nodejs.org/docs/latest-v16.x/api/modules.html).
+    - actionId: ready_message
+      params:
+        person: lucca
+trigger:
+  type: user_ready_response
+  flowNode:
+    do:
+      - actionId: finish_step
