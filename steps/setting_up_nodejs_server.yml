@@ -1,0 +1,28 @@
+id: setting_up_nodejs_server
+learningObjectives:
+  - Set up a basic Node.js server.
+hints:
+  - Here's a great place to practice setting up an [HTTP
+    server](https://nodejs.dev/learn/the-nodejs-http-module).
+startFlow:
+  do:
+    - actionId: bot_message
+      params:
+        person: lucca
+        messages:
+          - text: Creating a simple HTTP server in Node.js is surprisingly easy.
+          - text: With just a few lines of code, you can have a server up and running to
+              respond to HTTP requests.
+          - text: Import the `http` module, define the server logic, and listen on a port.
+          - text: "Check out this simple guide to get started: [Node.js
+              Server](https://nodejs.dev/learn/the-nodejs-http-module)."
+          - text: Look at you, building servers like it's no big deal! Let's keep the
+              momentum going.
+    - actionId: ready_message
+      params:
+        person: lucca
+trigger:
+  type: user_ready_response
+  flowNode:
+    do:
+      - actionId: finish_step
