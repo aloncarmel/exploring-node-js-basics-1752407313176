@@ -1,0 +1,27 @@
+id: welcome_to_nodejs
+learningObjectives:
+  - Introduction to Node.js and its significance in server-side development.
+hints: []
+startFlow:
+  do:
+    - actionId: bot_message
+      params:
+        person: lucca
+        messages:
+          - text: Welcome to the world of Node.js, where JavaScript breaks free of the
+              browser!
+          - text: Node.js allows JavaScript to run server-side, which means you can use it
+              to build both the front and the back end of web applications.
+          - text: It's powered by V8, the same engine that runs Google Chrome, making it
+              incredibly fast and efficient.
+          - text: In this quest, we'll dive into the heart of Node.js and understand what
+              makes it tick. Ready to unravel its mysteries? Click when you're
+              ready to embark on this adventure!
+    - actionId: ready_message
+      params:
+        person: lucca
+trigger:
+  type: user_ready_response
+  flowNode:
+    do:
+      - actionId: finish_step
